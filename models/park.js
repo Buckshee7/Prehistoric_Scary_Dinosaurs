@@ -48,4 +48,9 @@ Park.prototype.yearlyVisitors = function(){
 };
 
 
+Park.prototype.yearlyRevenue = function(){
+    const yearly = this.yearlyVisitors();
+    return yearly*this.price;
+};
+
 module.exports = Park;
