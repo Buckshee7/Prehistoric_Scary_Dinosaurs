@@ -8,7 +8,7 @@ describe('Park', function() {
   beforeEach(function () {
     dino1 = new Dinosaur("TRex", "carnivore", 10);
     dino2 = new Dinosaur("Stegasaurus", "herbavore", 5);
-    dino3 = new Dinosaur("Triceratops", "herbavore", 15)
+    dino3 = new Dinosaur("TRex", "carnivore", 15)
     park1 = new Park("Prehistoric Scary Dinosaurs 61", 50, [dino1, dino2])
   });
 
@@ -33,7 +33,11 @@ describe('Park', function() {
     assert.strictEqual(actual, 3);
   });
 
-  it('should be able to remove a dinosaur from its collection');
+  it('should be able to remove a dinosaur from its collection', function(){
+    park1.removeDino();
+    const actual = park1.dinosaurs.length;
+    assert.strictEqual(actual, 1);
+  });
 
   it('should be able to find the dinosaur that attracts the most visitors');
 
