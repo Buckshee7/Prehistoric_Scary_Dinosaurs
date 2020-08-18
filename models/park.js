@@ -63,4 +63,12 @@ Park.prototype.removeAll = function(species){
     this.dinosaurs = toKeep;
 };
 
+Park.prototype.summary = function(){
+    let summary = { carnivore: 0, herbivore: 0, omnivore: 0 };
+    for (let dino of this.dinosaurs){
+        summary[dino.diet] += 1;
+    };
+    return summary;
+};
+
 module.exports = Park;
