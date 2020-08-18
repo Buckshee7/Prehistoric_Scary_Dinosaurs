@@ -53,4 +53,14 @@ Park.prototype.yearlyRevenue = function(){
     return yearly*this.price;
 };
 
+Park.prototype.removeAll = function(species){
+    let toKeep = [];
+    for (let dino of this.dinosaurs){
+        if (dino.species !== species){
+            toKeep.push(dino);
+        };
+    };
+    this.dinosaurs = toKeep;
+};
+
 module.exports = Park;
